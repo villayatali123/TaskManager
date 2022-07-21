@@ -1,4 +1,5 @@
 const express = require('express');
+const path=require('path');
 const app = express();
 const tasks = require('./routes/tasks');
 const connectDB = require('./db/connect');
@@ -10,8 +11,8 @@ app.use(express.static('./public'));
 app.use(express.json());
 
 // routes
-
 app.use('/api/v1/tasks', tasks);
+
 
 
 const port = process.env.PORT || 5000;
@@ -25,6 +26,6 @@ const start = async () => {
   } catch (error) {
     console.log(error);
   }
-};
+}
 
-start();
+start()
